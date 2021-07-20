@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible"
+    content="IE=edge" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0" />
+  <title>Calculator</title>
+  <link rel="shortcut icon"
+    href="calculator-solid.svg"
+    type="image/x-icon">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+    integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="view" data-mode="light"
+    onclick="changeMode(this)">
+    <i class="fa fa-moon"></i>
+  </div>
+  <form class="calculator" name="calc">
+    <input class="value" type="text" id="inp"
+      name="txt" readonly="" />
+    <span onmousedown="beep.play()" class="num clear"
+      onclick="document.calc.txt.value ='' ">C</span>
+    <span onmousedown="beep.play()" class="numfun pre"
+      onclick="document.calc.txt.value +='%' ">%</span>
+    <span onmousedown="beep.play()" class="num cle"
+      onclick="document.calc.txt.value =document.calc.txt.value.substring(0,document.calc.txt.value.length*1-1)  "><i
+        class="fas fa-backspace"></i></span>
+    <span onmousedown="beep.play()" class="numfun"
+      onclick="document.calc.txt.value +='/' "><i
+        class="fas fa-divide"></i></span>
+    <span onmousedown="beep.play()" class="num"
+      onclick="document.calc.txt.value +='7' ">7</span>
+    <span onmousedown="beep.play()" class="num"
+      onclick="document.calc.txt.value +='8' ">8</span>
+    <span onmousedown="beep.play()" class="num"
+      onclick="document.calc.txt.value +='9' ">9</span>
+    <span onmousedown="beep.play()" class="numfun"
+      onclick="document.calc.txt.value +='*' ">x</span>
+    <span onmousedown="beep.play()" class="num"
+      onclick="document.calc.txt.value +='4' ">4</span>
+    <span onmousedown="beep.play()" class="num"
+      onclick="document.calc.txt.value +='5' ">5</span>
+    <span onmousedown="beep.play()" class="num"
+      onclick="document.calc.txt.value +='6' ">6</span>
+    <span onmousedown="beep.play()" class="numfun"
+      onclick="document.calc.txt.value +='-' ">
+      -</span>
+    <span onmousedown="beep.play()" class="num"
+      onclick="document.calc.txt.value +='1' ">1</span>
+    <span onmousedown="beep.play()" class="num"
+      onclick="document.calc.txt.value +='2' ">2</span>
+    <span onmousedown="beep.play()" class="num"
+      onclick="document.calc.txt.value +='3' ">3</span>
+    <span onmousedown="beep.play()" class="numfun "
+      onclick="document.calc.txt.value +='+' ">+</span>
+    <span onmousedown="beep.play()" class="num zero"
+      onclick="document.calc.txt.value +='0' ">0</span>
+    <span onmousedown="beep.play()" class="num zero"
+      onclick="document.calc.txt.value +='00' ">00</span>
+    <span onmousedown="beep.play()" class="num point"
+      onclick="document.calc.txt.value +='.' ">.</span>
+    <span onmousedown="beep.play()" class="num equal"
+      onclick="document.calc.txt.value = eval(calc.txt.value)">
+      = </span>
+  </form>
+  <script>
+    function changeMode(themeobj) {
+      if (themeobj.dataset.mode == "light") {
+        document.documentElement.setAttribute("data-theme", "dark");
+        themeobj.dataset.mode = "dark";
+
+      } else {
+        document.documentElement.setAttribute("data-theme", "light");
+        themeobj.dataset.mode = "light";
+      }
+    }
+    var beep= new Audio();
+    beep.src="mouse.mp3";
+  </script>
+</body>
+
+</html>

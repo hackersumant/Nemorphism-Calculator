@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  transition: 0.2s;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--background);
+}
+.calculator {
+  position: relative;
+  display: grid;
+  border-radius: 10px;
+  box-shadow: var(--calshd);
+  width: auto;
+  padding: 10px 10px;
+  height: auto;
+}
+.calculator .value {
+  font-family: "Mulish";
+  font-weight: 700;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  grid-column: span 4;
+  height: 150px;
+  text-align: right;
+  outline: none;
+  cursor: default;
+  background: var(--background);
+  border: none;
+  padding: 10px;
+  color: var(--color);
+  font-size: 24px;
+  border-bottom: 1px solid var(--bd);
+}
+.calculator span {
+  display: grid;
+  width: 60px;
+  height: 60px;
+  color: #fff;
+  box-shadow: var(--shadow);
+  border-radius: 50% !important;
+  margin-top: 10px;
+  place-items: center;
+  border-radius: 2px;
+  font-weight: 600;
+  color: var(--color);
+  font-size: 20px;
+  user-select: none;
+  cursor: pointer;
+  background: var(--background);
+  text-shadow: var(--textshd);
+}
+.calculator span:active {
+  color: crimson;
+  box-shadow: var(--shd2);
+}
+.calculator .numfun:active {
+  color: crimson;
+  box-shadow: var(--shd2);
+}
+.calculator .numfun {
+  border-radius: 50%;
+  color: var(--cd);
+  box-shadow: var(--shadow);
+}
+.calculator span.clear:active {
+  color: crimson;
+  box-shadow: var(--shd2);
+}
+.calculator span.clear {
+  grid-column: span;
+  box-shadow: var(--shadow);
+  border-radius: 50%;
+  color: var(--cd);
+}
+.calculator span.cle:active {
+  color: crimson;
+  box-shadow: var(--shd2);
+}
+.calculator span.cle {
+  box-shadow: var(--shadow);
+  border-radius: 50%;
+  color: var(--cd);
+}
+.calculator span.point {
+  font-size: 38px;
+}
+.calculator span.equal {
+  color: var(--cd);
+  box-shadow: var(--shadow);
+  border-radius: 50%;
+  font-size: 30px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+.calculator span.equal:active {
+  color: crimson;
+  box-shadow: var(--shd2);
+}
+
+#view {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  box-shadow: var(--shadow);
+  border-radius: 50%;
+  z-index: 1;
+}
+.fa-moon {
+  color: var(--color);
+  margin: 12px;
+  font-size: 2.4rem;
+  text-shadow: var(--textshd);
+  cursor: pointer;
+}
+:root {
+  --background: #e5e6ef;
+  --shadow: -2px -2px 3px rgba(255, 255, 255, 0.5),
+    2px 2px 3px rgba(0, 0, 0, 0.2);
+  --shd2: -2px -2px 3px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.2),
+    inset -2px -2px 3px rgba(255, 255, 255, 0.5);
+  --textshd: none;
+  --bd: #f1f3ff;
+  --color: #000;
+  --calshd: inset -2px -2px 2px rgba(0, 0, 0, 0.2),
+    inset 2px 2px 2px rgba(255, 255, 255);
+    --cd:orange;
+}
+[data-theme="dark"] {
+  --color: #03a9f4;
+  --bd: #575757;
+  --background: #131419;
+  --textshd: none;
+  --shadow: inset -2px -2px 3px rgba(0, 0, 0, 0.5),
+    inset 2px 2px 3px rgba(255, 255, 255, 0.07);
+  --shd2: inset -2px -2px 3px rgba(70, 70, 70, 0.8),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.7);
+  --calshd:-5px -5px 10px rgba(255,255,255,0.05),5px 5px 15px rgba(0,0,0,0.5)
+           
+}
